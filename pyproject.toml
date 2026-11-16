@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "webprobe"
+version = "1.1.0"
+description = "Local-only web vulnerability scanner with a built-in vulnerable lab app"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []          # standard library only
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+webprobe = "webprobe.cli:main"
+
+[tool.setuptools]
+packages = ["webprobe"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
